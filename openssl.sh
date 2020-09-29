@@ -1,9 +1,7 @@
 #!/bin/bash
 
-
 BASE="/usr/local/src"
 OPENSSL_VERSION="1.1.1g"
-
 
 (mkdir -p ${BASE}/openssl-install \
  && cd ${BASE}/openssl-install \
@@ -20,7 +18,6 @@ sudo touch /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf
 sudo echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf
 sudo ldconfig -v
 sudo mv /bin/openssl /bin/openssl.backup
-
 
 sudo touch /etc/profile.d/openssl.sh
 sudo cat >/etc/profile.d/openssl.sh <<EOL
