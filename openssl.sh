@@ -20,7 +20,7 @@ sudo ldconfig -v
 sudo mv /bin/openssl /bin/openssl.backup
 
 sudo touch /etc/profile.d/openssl.sh
-sudo cat >/etc/profile.d/openssl.sh <<EOL
+sudo cat >/etc/profile.d/openssl.sh <<'EOL'
 OPENSSL_PATH="/usr/local/ssl/bin"
 export OPENSSL_PATH
 PATH=$PATH:$OPENSSL_PATH

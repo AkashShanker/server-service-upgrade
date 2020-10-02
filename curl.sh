@@ -22,7 +22,7 @@ sleep 5
 
 sudo touch /etc/profile.d/curl.sh
 
-sudo cat >/etc/profile.d/curl.sh <<EOL
+sudo cat >/etc/profile.d/curl.sh <<'EOL'
 CURL_PATH="/usr/local/curl/bin"
 export CURL_PATH
 PATH=$PATH:$CURL_PATH
