@@ -10,7 +10,7 @@ PHP_VERSION="7.4.10"
  && mkdir php-${PHP_VERSION} \
  && tar -xvzf php-7.4.10.tar.gz -C ${BASE}/php-install/php-${PHP_VERSION} --strip-components 1 \
  && cd ${BASE}/php-install/php-${PHP_VERSION} \
- && sudo OPENSSL_CFLAGS="-I/usr/local/ssl/include/openssl" OPENSSL_LIBS="-L/usr/local/ssl/lib" CURL_CFLAGS="-I/usr/local/include" CURL_LIBS="-L/usr/local/lib -lcurl" ./configure --disable-shared --with-curl --with-openssl \
+ && sudo OPENSSL_CFLAGS="-I/usr/local/ssl/include" OPENSSL_LIBS="-L/usr/local/ssl/lib" CURL_CFLAGS="-I/usr/local/curl/include" CURL_LIBS="-L/usr/local/curl/lib -lcurl" ./configure --disable-shared --with-openssl --with-curl --with-apxs2=/usr/local/httpd/bin/apxs \
  && sudo make -j4 \
  && sudo make install
 )
