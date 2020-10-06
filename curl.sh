@@ -22,6 +22,8 @@ sleep 5
 
 sudo touch /etc/profile.d/curl.sh
 
+sudo mv /usr/bin/curl /usr/bin/curl.backup
+
 sudo cat >/etc/profile.d/curl.sh <<'EOL'
 CURL_PATH="/usr/local/curl/bin"
 export CURL_PATH
