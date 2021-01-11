@@ -13,7 +13,7 @@ OPENSSL_VERSION="1.1.1i"
  && mkdir -p curl-${CURL_VERSION}-ssl-${OPENSSL_VERSION} \
  && tar -xvzf curl-7.72.0.tar.gz -C ${BASE}/curl-install/curl-${CURL_VERSION}-ssl-${OPENSSL_VERSION} --strip-components 1 \
  && cd ${BASE}/curl-install/curl-${CURL_VERSION}-ssl-${OPENSSL_VERSION} \
- && sudo ./configure --prefix=/usr/local/curl-versions/curl-${CURL_VERSION}-ssl-${OPENSSL_VERSION} --with-ssl=/usr/local/ssl-1.1.1i \
+ && sudo ./configure --prefix=/usr/local/curl-versions/curl-${CURL_VERSION}-ssl-${OPENSSL_VERSION} --with-ssl=/usr/local/ssl-versions/ssl-1.1.1i \
  && sudo make -j4 \
  && sudo make install
 )

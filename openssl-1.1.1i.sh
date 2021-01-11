@@ -5,7 +5,7 @@ set -ex
 BASE="/usr/local/src"
 OPENSSL_VERSION="1.1.1i"
 OPENSSL_VERSION_F="1_1_1i"
-PREFIX="/usr/local/ssl-1.1.1i"
+PREFIX="/usr/local/ssl-versions/ssl-1.1.1i"
 
 (mkdir -p ${BASE}/openssl-install \
  && cd ${BASE}/openssl-install \
@@ -29,7 +29,7 @@ sudo ldconfig -v
 
 sudo touch /etc/profile.d/openssl-${OPENSSL_VERSION}.sh
 sudo cat >/etc/profile.d/openssl-${OPENSSL_VERSION}.sh <<'EOL'
-OPENSSL_PATH="/usr/local/ssl-1.1.1i/bin"
+OPENSSL_PATH="/usr/local/ssl-versions/ssl-1.1.1i/bin"
 export OPENSSL_PATH
 PATH=$PATH:$OPENSSL_PATH
 export PATH
