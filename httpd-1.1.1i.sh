@@ -4,7 +4,7 @@ set -ex
 
 BASE="/usr/local/src"
 HTTPD_VERSION="2.4.46"
-OPENSSL_PATH="/usr/local/ssl-1.1.1i"
+OPENSSL_PATH="/usr/local/ssl-versions/ssl-1.1.1i/bin/openssl"
 OPENSSL_VERSION="1.1.1i"
 
 
@@ -49,7 +49,7 @@ PATH=$PATH:$HTTPD_PATH
 export PATH
 EOL
 
-sudo chmod +x /etc/profile.d/httpd-${HTTPD_VERSION}-ssl-${OPENSSL_VERSION}.sh
+#sudo chmod +x /etc/profile.d/httpd-${HTTPD_VERSION}-ssl-${OPENSSL_VERSION}.sh
 
 : '
 sudo touch /etc/profile.d/httpd.sh
