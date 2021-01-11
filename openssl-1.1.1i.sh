@@ -10,9 +10,9 @@ PREFIX="/usr/local/ssl-1.1.1i"
 (mkdir -p ${BASE}/openssl-install \
  && cd ${BASE}/openssl-install \
  && curl -O -L https://github.com/openssl/openssl/archive/OpenSSL_${OPENSSL_VERSION_F}.tar.gz \
- && mkdir -p ${BASE}/openssl-install/openssl-${OPENSSL_VERSION} \
- && tar -xvzf ${BASE}/openssl-install/OpenSSL_${OPENSSL_VERSION_F}.tar.gz -C ${BASE}/openssl-install/openssl --strip-components 1 \
- && cd ${BASE}/openssl-install/openssl \
+ && mkdir -p ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSION} \
+ && tar -xvzf ${BASE}/openssl-install/openssl-versions/OpenSSL_${OPENSSL_VERSION_F}.tar.gz -C ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSIONS} --strip-components 1 \
+ && cd ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSIONS} \
  && sudo ./config --prefix=${PREFIX} --openssldir=${PREFIX} shared zlib \
  && sudo make -j4 \
  && sudo make install
