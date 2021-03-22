@@ -1,15 +1,15 @@
 #!/bin/bash
 
 BASE="/usr/local/src"
-OPENSSL_VERSION="1.1.1g"
+OPENSSL_VERSION="1.1.1j"
 
 (mkdir -p ${BASE}/openssl-install \
  && cd ${BASE}/openssl-install \
- && curl -O -L https://github.com/openssl/openssl/archive/OpenSSL_1_1_1g.tar.gz \
- && mkdir ${BASE}/openssl-install/openssl \
- && tar -xvzf ${BASE}/openssl-install/OpenSSL_1_1_1g.tar.gz -C ${BASE}/openssl-install/openssl --strip-components 1 \
- && cd ${BASE}/openssl-install/openssl \
- && sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib \
+ && curl -O -L https://github.com/openssl/openssl/archive/OpenSSL_1_1_1j.tar.gz \
+ && mkdir -p ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSION} \
+ && tar -xvzf ${BASE}/openssl-install/OpenSSL_1_1_1j.tar.gz -C ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSION} --strip-components 1 \
+ && cd ${BASE}/openssl-install/openssl-versions/openssl-${OPENSSL_VERSION} \
+ && sudo ./config --prefix=/usr/local/ssl-versions/openssl-${OPENSSL_VERSION} --openssldir=/usr/local/ssl shared zlib \
  && sudo make -j4 \
  && sudo make install
 )
