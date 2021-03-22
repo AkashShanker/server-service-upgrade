@@ -15,19 +15,19 @@ OPENSSL_VERSION="1.1.1j"
 )
 
 sudo touch /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf
-sudo echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-$OPENSSL_VERSION.conf
+sudo echo "/usr/local/ssl-versions/openssl-1.1.1j/lib" > /etc/ld.so.conf.d/openssl-${OPENSSL_VERSION}.conf
 sudo ldconfig -v
 sudo mv /bin/openssl /bin/openssl.backup
 
-sudo touch /etc/profile.d/openssl.sh
+sudo touch /etc/profile.d/openssl-${OPENSSL_VERSION}.sh
 sudo cat >/etc/profile.d/openssl.sh <<'EOL'
-OPENSSL_PATH="/usr/local/ssl/bin"
+OPENSSL_PATH="/usr/local/ssl-versions/openssl-1.1.1j/bin"
 export OPENSSL_PATH
 PATH=$PATH:$OPENSSL_PATH
 export PATH
 EOL
 
-sudo chmod +x /etc/profile.d/openssl.sh
+sudo chmod +x /etc/profile.d/openssl-${OPENSSL_VERSION}.sh
 source /etc/profile.d/openssl.sh
 
 
